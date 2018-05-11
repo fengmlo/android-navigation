@@ -22,13 +22,20 @@
         tools:layout="@layout/main_fragment">
 
         <!-- TODO STEP 8 - Add action with transitions -->
-        <!--<action-->
-            <!--android:id="@+id/next_action"-->
-            <!--app:destination="@+id/flow_step_one"-->
-            <!--app:enterAnim="@anim/slide_in_right"-->
-            <!--app:exitAnim="@anim/slide_out_left"-->
-            <!--app:popEnterAnim="@anim/slide_in_left"-->
-            <!--app:popExitAnim="@anim/slide_out_right" />-->
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/flow_step_one"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_launcher_home_to_shoppingCartFragment"
+            app:destination="@id/shopping_cart"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
         <!-- TODO ENDSTEP -->
 
@@ -66,11 +73,11 @@
     </fragment>
 
     <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
-    <!--<fragment-->
-        <!--android:id="@+id/settings_fragment"-->
-        <!--android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
-        <!--android:label="fragment_settings"-->
-        <!--tools:layout="@layout/fragment_settings"/>-->
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.example.android.codelabs.navigation.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings"/>
     <!-- TODO END STEP 4 -->
 
     <fragment
@@ -84,8 +91,22 @@
             android:defaultValue="Android!"/>
         <!-- TODO STEP 12 - Add a deep link to www.iana.org/domains/{myarg}/ -->
 
-        <!--<deepLink app:uri="www.example.com/{myarg}" />-->
+        <deepLink app:uri="www.iana.org/domains/{myarg}" />
 
         <!-- TODO END STEP 12 -->
+    </fragment>
+    <fragment
+        android:id="@+id/shopping_cart"
+        android:name="com.example.android.codelabs.navigation.ShoppingCartFragment"
+        android:label="fragment_shopping_cart"
+        tools:layout="@layout/fragment_shopping_cart" >
+        <argument
+            android:name="name"
+            android:defaultValue="null"
+            app:type="string" />
+        <argument
+            android:name="number"
+            android:defaultValue="0"
+            app:type="integer" />
     </fragment>
 </navigation>
